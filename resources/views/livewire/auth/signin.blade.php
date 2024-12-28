@@ -1,8 +1,7 @@
 <div class="flex items-center justify-center min-h-screen">
     <div class="w-full max-w-md bg-white rounded-lg shadow-md p-6">
-        @if (session('error'))
-            <div class="bg-red-500 text-white p-3">{{ session('error') }}</div>
-        @endif
+        <!---- Error Alert ----->
+        <x-alerts.alert />
         <h2 class="text-2xl font-bold text-gray-700 text-center">Login</h2>
         <form class="mt-6" wire:submit.prevent="signIn">
             @csrf
@@ -50,7 +49,7 @@
             </button>
         </form>
         <p class="mt-4 text-sm text-gray-600 text-center">
-            Don't have an account? <a href="{{ route('sign-up') }}" class="text-blue-500 hover:underline" wire:navigate>Sign up</a>
+            Don't have an account? <a href="{{ route('sign_up') }}" class="text-blue-500 hover:underline" wire:navigate>Sign up</a>
         </p>
     </div>
 </div>
