@@ -69,7 +69,7 @@
             </button>
         </form>
         <p class="mt-4 text-sm text-gray-600 text-center">
-            Already have an account? <a href="{{ route('sign_in') }}" class="text-blue-500 hover:underline" wire:navigate>Login</a>
+            Already have an account? <a href="{{ route('sign_in') }}" class="text-blue-500 hover:underline" wire:navigate>Sign In</a>
         </p>
     </div>
 </div>
