@@ -17,7 +17,7 @@ class AuthenticateMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if(!Auth::check()){
-            return to_route('sign-in')->with('error', 'Unauthorized');
+            return to_route('sign_in')->with('error', 'Unauthorized');
         }
         return $next($request);
     }

@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Auth;
 
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -18,12 +19,13 @@ class Signin extends Component
     {
         $this->validate();
 
-        if(Auth::attempt(['email' => $this->email, 'password' => $this->password])){
-            return to_route('home');
+        if (Auth::attempt(['email' => $this->email, 'password' => $this->password])) {
+            session()->flash('success', 'Login Successful');
+            return $this->redirectRoute('home', navigate:true);
         }
-        
-        // $this->addError('email', 'Invalid email or password');
-        return back()->with('error', 'Invalid Email or Password');
+
+        $this->addError('email', 'Invalid email or password.');
+
     }
 
     public function render()
