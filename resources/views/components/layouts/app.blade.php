@@ -12,7 +12,7 @@
         <!-- Header -->
         <header class="bg-blue-600 text-white py-4 shadow-md">
             <div class="container mx-auto text-center">
-                <h1 class="text-2xl font-bold">ToDo App</h1>
+                <h1 class="text-2xl font-bold">Laravel Livewire Todo App</h1>
             </div>
         </header>
 
