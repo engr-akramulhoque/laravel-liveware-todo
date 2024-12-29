@@ -20,7 +20,14 @@
                 <p class="text-sm text-gray-600">Date: {{ $todo->date }}</p>
                 <p class="text-sm text-gray-600">From: {{ $todo->from }} - To: {{ $todo->to }}</p>
             </div>
-            <button class="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Delete</button>
+            <div class="flex items-center gap-2 mt-3">
+                <button class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Mark as Completed</button>
+                <button class="px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Edit</button>
+                <button class="px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600" 
+                wire:click="deleteTodo({{ $todo->id }})"
+                onclick="return confirm('Are you sure you want to delete?')"
+                >Delete</button>
+            </div>
         </div> 
         @endforeach
     </div>

@@ -24,10 +24,11 @@
         </div>
         <div>
             <label for="taskDate" class="block text-gray-700 mb-1">Date</label>
-            <input id="taskDate" type="date"
+            <input id="date-input" type="date"
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                 name="date"
-                wire:model="date">
+                wire:model="date"
+                min="now()">
             @error('date')
                 <span class="text-red-500">{{ $message }}</span>
             @enderror
@@ -57,9 +58,17 @@
             </label>
         </div>
         <div class="col-span-1 md:col-span-2 lg:col-span-4">
-            <button id="addTaskButton" type="button"
+            <button type="submit"
                 class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">Add
                 Task</button>
         </div>
     </form>
 </div>
+
+<script>
+    // Get today's date in YYYY-MM-DD format
+    const today = new Date().toISOString().split('T')[0];
+
+    // Set the 'min' attribute dynamically
+    document.getElementById('date-input').setAttribute('min', today);
+</script>
