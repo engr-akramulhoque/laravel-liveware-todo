@@ -14,7 +14,7 @@ class TodoList extends Component
     public function mount(Request $request)
     {
         $this->user = $request->user()->id;
-        $this->todos = Todo::query()->where('user_id', '=', $this->user)->get();
+        $this->todos = Todo::query()->where('user_id', '=', $this->user)->latest()->get();
     }
 
     public function render()

@@ -15,7 +15,7 @@
         @foreach ($todos as $todo)
         <div class="bg-gray-50 p-4 rounded-lg shadow flex flex-col justify-between">
             <div>
-                <h3 class="font-bold text-lg text-gray-800">{{ $todo->title }}</h3>
+                <h3 class="font-bold text-lg text-gray-800 pb-3">{{ $todo->title }}</h3>
                 <p class="text-sm text-gray-600 pb-2">Description: {{ Str::limit($todo->description, 150, '...') }}</p>
                 <p class="text-sm text-gray-600">Date: {{ $todo->date }}</p>
                 <p class="text-sm text-gray-600">From: {{ $todo->from }} - To: {{ $todo->to }}</p>
