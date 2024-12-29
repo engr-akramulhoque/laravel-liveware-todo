@@ -26,43 +26,5 @@
             <p>&copy; 2024 ToDo App. All rights reserved.</p>
         </footer>
         <!-- Script -->
-        <script>
-            document.getElementById('addTaskButton').addEventListener('click', () => {
-                const taskTitle = document.getElementById('taskTitle');
-                const taskDescription = document.getElementById('taskDescription');
-                const taskDate = document.getElementById('taskDate');
-                const taskFrom = document.getElementById('taskFrom');
-                const taskTo = document.getElementById('taskTo');
-                const taskList = document.getElementById('taskList');
-
-                if (taskTitle.value.trim() !== '' && taskDate.value && taskFrom.value && taskTo.value) {
-                    const card = document.createElement('div');
-                    card.className = 'bg-gray-50 p-4 rounded-lg shadow flex flex-col justify-between';
-
-                    const taskDetails = document.createElement('div');
-                    taskDetails.innerHTML = `
-                        <h3 class="font-bold text-lg text-gray-800">${taskTitle.value}</h3>
-                        <p class="text-sm text-gray-600">${taskDescription.value}</p>
-                        <p class="text-sm text-gray-600">Date: ${taskDate.value}</p>
-                        <p class="text-sm text-gray-600">From: ${taskFrom.value} - To: ${taskTo.value}</p>
-                    `;
-                    card.appendChild(taskDetails);
-
-                    const deleteButton = document.createElement('button');
-                    deleteButton.className = 'mt-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600';
-                    deleteButton.textContent = 'Delete';
-                    deleteButton.addEventListener('click', () => card.remove());
-                    card.appendChild(deleteButton);
-
-                    taskList.appendChild(card);
-
-                    taskTitle.value = '';
-                    taskDescription.value = '';
-                    taskDate.value = '';
-                    taskFrom.value = '';
-                    taskTo.value = '';
-                }
-            });
-        </script>
     </body>
 </html>

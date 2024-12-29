@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->date('date');
-            $table->timestamp('from');
-            $table->timestamp('to');
+            $table->string('from', 8);
+            $table->string('to', 8);
             $table->enum('status', ['pending', 'completed', 'scheduled', 'in-progress'])->default('pending');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

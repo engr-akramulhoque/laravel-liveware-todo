@@ -1,5 +1,8 @@
 <x-layouts.app>
     <!-- Add New Task Section -->
+    <x-alerts.alert />
+
+    <!-- Add New Task Section -->
     <livewire:todo.add-todo>
 
     <!-- Task List Section -->
