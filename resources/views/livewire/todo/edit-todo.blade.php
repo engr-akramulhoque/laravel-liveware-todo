@@ -1,13 +1,8 @@
 <div class="mb-6 bg-white rounded-lg shadow p-6">
-    <div class="flex justify-between">
-        <h2 class="text-xl font-semibold mb-4 text-gray-800">Add New Todo Task</h2>
-        <a href="{{ route('home') }}" class="px-4 py-2 bg-gray-400 rounded-lg shadow-md text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-400" 
-        wire:navigate="true"
-        >Back</a>
-    </div>
-
-    <form class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4" wire:submit.prevent="storeTodo">
-        @csrf
+    <h2 class="text-xl font-semibold mb-4 text-gray-800">Edit Todo Task</h2>
+    <form class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4" wire:submit.prevent="updateTodo">
+        @csrf 
+        @method('PUT')
         <div class="col-span-1 md:col-span-2 lg:col-span-4">
             <label for="taskTitle" class="block text-gray-700 mb-1">Task Title</label>
             <input id="taskTitle" type="text" placeholder="Task Title"
@@ -34,7 +29,7 @@
                 class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                 name="date"
                 wire:model="date"
-                min="now()">
+                min="">
             @error('date')
                 <span class="text-red-500">{{ $message }}</span>
             @enderror
@@ -65,7 +60,7 @@
         </div>
         <div class="col-span-1 md:col-span-2 lg:col-span-4">
             <button type="submit"
-                class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400">Add
+                class="w-full px-4 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400">Update
                 Task</button>
         </div>
     </form>
