@@ -19,9 +19,20 @@
                 <p class="text-sm text-gray-600 pb-2">Description: {{ Str::limit($todo->description, 150, '...') }}</p>
                 <p class="text-sm text-gray-600">Date: {{ $todo->date }}</p>
                 <p class="text-sm text-gray-600">From: {{ $todo->from }} - To: {{ $todo->to }}</p>
+                <p class="text-sm text-gray-600 pt-3">
+                    @if ($todo->status == 'completed')
+                        <span class="inline-block bg-green-500 text-white px-3 py-1 rounded-full">Completed</span>
+                    @else
+                        <span class="inline-block bg-yellow-500 text-white px-3 py-1 rounded-full">Pending</span>
+                    @endif    
+                </p>
+                </p>
             </div>
             <div class="flex items-center gap-2 mt-3">
-                <button class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">Mark as Completed</button>
+                <button class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+                wire:click="markAsCompleted({{ $todo->id }})"
+                onclick="return confirm('Are you sure this task is completed?')"
+                >Mark as Completed</button>
                 <button class="px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Edit</button>
                 <button class="px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600" 
                 wire:click="deleteTodo({{ $todo->id }})"
