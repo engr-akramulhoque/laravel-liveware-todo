@@ -1,5 +1,10 @@
 <div class="mb-6 bg-white rounded-lg shadow p-6">
-    <h2 class="text-xl font-semibold mb-4 text-gray-800">Your Tasks</h2>
+    <div class="flex justify-between">
+        <h2 class="text-xl font-semibold mb-4 text-gray-800">Your Tasks</h2>
+        <a href="{{ route('add-todo') }}" class="px-4 py-2 bg-blue-400 rounded-lg shadow-md text-white hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400" 
+        wire:navigate="true"
+        >Create Task</a>
+    </div>
     <!-- Filter Section -->
     <div class="mb-4">
         <label for="taskSearch" class="block text-gray-700 mb-2">Search Tasks</label>
@@ -29,12 +34,17 @@
                 </p>
             </div>
             <div class="flex items-center gap-2 mt-3">
-                <button class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+                <button 
+                class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
                 wire:click="markAsCompleted({{ $todo->id }})"
                 onclick="return confirm('Are you sure this task is completed?')"
                 >Mark as Completed</button>
-                <button class="px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Edit</button>
-                <button class="px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600" 
+                <a href="{{ route('edit-todo', $todo) }}"
+                class="px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+                wire:navigate="true">Edit</a>
+
+                <button 
+                class="px-3 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600" 
                 wire:click="deleteTodo({{ $todo->id }})"
                 onclick="return confirm('Are you sure you want to delete?')"
                 >Delete</button>
