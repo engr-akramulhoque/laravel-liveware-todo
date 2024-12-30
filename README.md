@@ -1,66 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Todo application using Laravel Livewire
+## Engr. Akramul Hoque
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+
+### Description:
+
+<p>This repository contains a fully functional Todo application built using Laravel Livewire, providing a seamless and interactive user experience without the need for full page reloads. The application enables users to manage their daily tasks with features such as creating, editing, marking as completed, and deleting todos.</p>
+
+### Features:
+<p>
+* Task Management: Add, edit, delete, and view todos.
+* Responsive Design: Optimized for desktop and mobile devices.
+* Dynamic Interaction: Real-time task updates powered by Livewire.
+* Authorization: Secure access to user-specific todos.
+* Validation: Server-side validation for all user inputs.
+* Customizable Durations: Set time durations for tasks (from and to fields).
 </p>
 
-## About Laravel
+## Requirements:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+```bash
+    "php": "^8.2",
+    "laravel/framework": "^11.0",
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# How to run the script?
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### step 1: Clone the repository
 
-## Learning Laravel
+```bash
+    git clone https://github.com/engr-akramulhoque/laravel-livewire-todo.git
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### step 2: Go to the Directory
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+    cd laravel-livewire-todo
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### step 3: Install all dependencies
 
-## Laravel Sponsors
+```bash
+    composer install
+    # or
+    composer update
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### step 4: Copy .env files
 
-### Premium Partners
+```bash
+    cp .env.example .env
+    # it will generate .env file from .env.example
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### step 5: Configure environment
 
-## Contributing
+<p>Open .env file inside any of your code editor and fill all the following credentials</p>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+    # Set .env configuration
 
-## Code of Conduct
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=todo_test_db
+    DB_USERNAME=root
+    DB_PASSWORD=
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### step 6:
 
-## Security Vulnerabilities
+```bash
+    php artisan key:generate
+    # it will generate the application key
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### step 6: Dump Database
 
-## License
+```bash
+    php artisan migrate
+    # it will run the database migrations
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    php artisan db:seed
+    # it will seeding dummy data into the database
+```
+
+### step 7:
+
+```bash
+    npm install
+    # &&
+    npm run dev
+```
+
+### step 8:
+
+```bash
+    php artisan serve
+```
+
+<p>Go to Local Server:
+    <a href="http://127.0.0.1:8000" target="_blank">http://127.0.0.1:8000</a>
+</p>
+
+<p>Login Credentials:
+<span>Email: test@example.com</span>
+<span>Password: password</span>
+</p>
+
+### contributions :
+
+<p>
+    Akramul Hoque (Software Engineer)<br>
+</p>
+
+<span>copyright: <a href="https://github.com/engr-akramulhoque">Engr. Akramul Hoque</a></span>
+
+### Hope you enjoying this project. Have a good day!
+
+## Thank you!
