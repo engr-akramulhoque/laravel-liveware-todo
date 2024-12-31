@@ -1,6 +1,12 @@
 # Todo application using Laravel Livewire
 ## Engr. Akramul Hoque
 
+### Screen Shorts
+
+<span>
+<img src="./public/assets/screenshorts/home.png" alt="home-page" width="1000px" hight="600px" style="object-fit:cover;" />
+<img src="./public/assets/screenshorts/add-todo.png" alt="add-todo-page" width="1000px" hight="600px" style="object-fit:cover;" />
+</span>
 
 ### Description:
 
