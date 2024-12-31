@@ -6,10 +6,20 @@
         >Create Task</a>
     </div>
     <!-- Filter Section -->
-    <div class="mb-4">
-        <label for="taskSearch" class="block text-gray-700 mb-2">Search Tasks</label>
-        <input id="taskSearch" type="text" placeholder="Search by title..." class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400">
-    </div>
+    <form wire:submit="searchTodo">
+        <div class="mb-4">
+            <label for="taskSearch" class="block text-gray-700 mb-2">Search Tasks</label>
+            <div class="flex">
+                <input id="taskSearch" 
+                type="text" 
+                placeholder="Search by title..." 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                wire:model="search"
+                >
+                <button type="submit" class="px-4 py-2 bg-blue-400 rounded-lg shadow-md text-white hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400">Search</button>
+            </div>
+        </div>
+    </form>
     <div class="flex flex-wrap gap-2 mb-6">
         <button class="px-4 py-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">All</button>
         <button class="px-4 py-2 bg-gray-200 rounded-lg shadow-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">Completed</button>

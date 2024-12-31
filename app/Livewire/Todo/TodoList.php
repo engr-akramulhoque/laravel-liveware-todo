@@ -11,6 +11,8 @@ class TodoList extends Component
     public $user = null;
     public $todos = [];
 
+    public string $search = '';
+
     public function mount(Request $request)
     {
         $this->user = $request->user()->id;
@@ -20,7 +22,18 @@ class TodoList extends Component
 
     private function refreshTodos()
     {
-        $this->todos = Todo::where('user_id', $this->user)->latest()->get();
+        $query = Todo::where('user_id', $this->user);
+
+        if ($this->search) {
+            $query->where('title', 'like', "%{$this->search}%")
+            ->orWhere('description', 'like', "%{$this->search}%");
+        }
+
+        $this->todos = $query->latest()->get();
+    }
+
+    public function searchTodo(){
+        $this->refreshTodos();
     }
 
     private function authorizeAction($request)
