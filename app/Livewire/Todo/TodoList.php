@@ -4,6 +4,7 @@ namespace App\Livewire\Todo;
 
 use App\Models\Todo;
 use Illuminate\Http\Request;
+use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class TodoList extends Component
@@ -11,6 +12,7 @@ class TodoList extends Component
     public $user = null;
     public $todos = [];
 
+    #[Validate('string')]
     public string $search = '';
 
     public function mount(Request $request)
